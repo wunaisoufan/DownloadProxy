@@ -100,6 +100,13 @@ if (isset($_POST['url'])) {
         // 获取远程文件的文件名
         $file_name = basename(parse_url($url, PHP_URL_PATH));
 
+        // 检查 Content-Type 是否是压缩格式，并尝试自动修正
+        $expected_mime_types = ['application/zip', 'application/x-zip-compressed', 'application/x-tar', 'application/gzip'];
+        if (!in_array($content_type, $expected_mime_types)) {
+            // 如果 Content-Type 不符合预期，则使用默认的压缩格式
+            $content_type = 'application/zip';
+        }
+
         // 设置 Content-Type 和 Content-Disposition 头部
         header("Content-Type: $content_type");
         header("Content-Disposition: attachment; filename=\"$file_name\"");
