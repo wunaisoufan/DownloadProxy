@@ -20,6 +20,18 @@ $correct_password = '密码'; 	// 替换为你的密码
 
 `robots.txt`不允许搜索引擎爬取，不需要删除即可。
 
+**nginx安全配置：**
+
+```nginx
+#禁止访问log目录
+location /log/ 
+{
+    return 403;
+}
+```
+
+**log目录需要给用户执行权限**
+
 ## 反馈
 
 个人博客：[sfwww.cn](htttps://sfwww.cn)
