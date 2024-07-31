@@ -1,0 +1,1 @@
+[2024-07-31 12:53:28] IP: X.X.X.X URL: https://github.com/wunaisoufan/DownloadProxy/releases/download/DownloadProxy_v1.1.0/DownloadProxy_v1.1.0_sfwww.cn.zip User-Agent: sfwww.cn HTTP Code: 302 Token: 
