@@ -12,7 +12,7 @@
 
 **必需PHP函数**：curl_、filter_va、parse_url、header、filesize、exit
 
-在`verify.php`文件里第四行
+在`verify.php`文件里第五行
 
 ```php
 $correct_password = '密码'; 	// 替换为你的密码
