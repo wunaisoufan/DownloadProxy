@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
-    header("Location: index.php");
+    header("Location: index");
     exit();
 }
 ?>
@@ -39,7 +39,7 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
                         <h1 class="text-center mb-0">下载代理</h1>
                     </div>
                     <div class="card-body">
-                        <form action="download.php" method="post">
+                        <form action="download" method="post">
                             <div class="form-group">
                                 <label for="url">输入URL：</label>
                                 <input type="text" class="form-control" id="url" name="url" placeholder="示例：https://example.com/file.pdf" required>
@@ -56,6 +56,9 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
                     <p>
                         <a href="https://sfwww.cn/" target="_blank" class="text-dark">
                             <i class="fas fa-link mr-1"></i>SouFan的博客
+                        </a>
+                        <a href="https://github.com/wunaisoufan/DownloadProxy" target="_blank" class="text-dark">
+                            <i class="fas fa-link mr-1"></i>DownloadProxy-Github
                         </a>
                     </p>
                 </div>

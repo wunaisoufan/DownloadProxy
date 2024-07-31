@@ -1,9 +1,14 @@
 <?php
-// 清除任何之前可能存在的 session 数据
 session_start();
-if (isset($_SESSION['verified'])) {
-    unset($_SESSION['verified']);
+
+// 检查用户是否已经验证过
+if (isset($_SESSION['verified']) && $_SESSION['verified'] === true) {
+    // 如果已经验证，重定向到 protected.php
+    header('Location: protected');
+    exit; // 确保脚本在此处停止执行
 }
+
+// 如果没有验证，继续显示表单
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +45,7 @@ if (isset($_SESSION['verified'])) {
                         <h1 class="text-center mb-0">下载代理</h1>
                     </div>
                     <div class="card-body">
-                        <form action="verify.php" method="POST">
+                        <form action="verify" method="POST">
                             <p>请输入密码以访问下载功能：</p>
                             <div class="form-group">
                                 <label for="password">密码：</label>
@@ -53,8 +58,11 @@ if (isset($_SESSION['verified'])) {
                 <div class="mt-4 text-center">
                     <p>
                         <a href="https://sfwww.cn/" target="_blank" class="text-dark">
-                            <i class="fas fa-link mr-1"></i>SouFan的博客
-                        </a>
+                            <i class="fas fa-link mr-1"></i>馊了的饭
+                        <br></a>
+                        <a href="https://github.com/wunaisoufan/DownloadProxy" target="_blank" class="text-dark">
+                            <i class="fas fa-link mr-1"></i>DownloadProxy-Github
+                        </a><br/>
                     </p>
                 </div>
             </div>

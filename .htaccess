@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 如果请求的资源不存在，则尝试添加 .php 扩展名
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)$ $1.php [L]
+
+    # 尝试直接提供请求的资源，如果资源不存在，则返回 404 错误
+    RewriteRule ^(.*)$ - [L,NC,F=404]
+</IfModule>
