@@ -8,19 +8,19 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>下载 - 下载代理</title>
-    <!-- 引入Bootstrap CSS，使用jsDelivr CDN以提升性能 -->
+    <!-- 引入Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!-- 引入Font Awesome CSS，使用jsDelivr CDN以提升性能 -->
+    <!-- 引入Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
     <!-- 自定义样式 -->
     <style>
+        /* 页面样式 */
         body {
             display: flex;
             justify-content: center;
@@ -61,9 +61,14 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
             background-color: #0062cc;
             border-color: #005cbf;
         }
+        /* 底部链接 */
         .footer-links {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 1rem;
             text-align: center;
-            margin-top: 2rem;
             color: #6c757d;
         }
         .footer-links a {
@@ -92,6 +97,7 @@ if (!isset($_SESSION['verified']) || $_SESSION['verified'] !== true) {
         </form>
     </div>
     <div class="footer-links">
+        <!-- 底部友情链接 -->
         <p>
             <a href="https://sfwww.cn/" target="_blank">
                 <i class="fas fa-link mr-1"></i>馊了的饭
